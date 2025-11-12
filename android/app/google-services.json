@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "80422483124",
+    "project_id": "skilllist-app",
+    "storage_bucket": "skilllist-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:80422483124:android:bc662fe5ee86c738a6d3e1",
+        "android_client_info": {
+          "package_name": "com.kamurandev.skilllist"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrkLNPeY7EIGvBj9G3Xfc_hb-nlZ_khTk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

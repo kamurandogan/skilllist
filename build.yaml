@@ -1,0 +1,13 @@
+targets:
+  $default:
+    builders:
+      freezed:
+        options:
+          # Generate fromJson/toJson methods
+          json: true
+          # Generate copyWith method
+          copy_with: true
+          # Generate == operator and hashCode
+          equal: true
+          # Generate toString method
+          to_string: true
