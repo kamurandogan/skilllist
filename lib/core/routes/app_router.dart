@@ -1,28 +1,78 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+
+import '../../features/tasks/presentation/pages/tasks_page.dart';
+import '../blocs/bottom_nav_cubit.dart';
+import '../widgets/app_bottom_navigation_bar.dart';
 
 class AppRouter {
   static const String splash = '/';
   static const String login = '/login';
   static const String register = '/register';
-  static const String home = '/home';
+  static const String tasks = '/tasks';
   static const String profile = '/profile';
   static const String projects = '/projects';
   static const String projectDetail = '/projects/:id';
-  static const String tasks = '/tasks';
   static const String taskDetail = '/tasks/:id';
   static const String chat = '/chat';
   static const String chatRoom = '/chat/:id';
   static const String search = '/search';
 
   static final GoRouter router = GoRouter(
-    initialLocation: splash,
+    initialLocation: tasks,
     debugLogDiagnostics: true,
     routes: [
-      GoRoute(
-        path: splash,
-        builder: (context, state) => const SplashPage(),
+      ShellRoute(
+        builder: (context, state, child) => BlocProvider(
+          create: (_) => BottomNavCubit(),
+          child: Scaffold(
+            body: child,
+            bottomNavigationBar: const AppBottomNav(),
+          ),
+        ),
+        routes: [
+          GoRoute(
+            path: tasks,
+            builder: (context, state) => const TasksPage(),
+            routes: [
+              GoRoute(
+                path: ':id',
+                builder: (context, state) {
+                  final id = state.pathParameters['id']!;
+                  return TaskDetailPage(taskId: id);
+                },
+              ),
+            ],
+          ),
+          GoRoute(
+            path: search,
+            builder: (context, state) => const SearchPage(),
+          ),
+          GoRoute(
+            path: chat,
+            builder: (context, state) => const ChatPage(),
+            routes: [
+              GoRoute(
+                path: ':id',
+                builder: (context, state) {
+                  final id = state.pathParameters['id']!;
+                  return ChatRoomPage(chatId: id);
+                },
+              ),
+            ],
+          ),
+          GoRoute(
+            path: profile,
+            builder: (context, state) => const ProfilePage(),
+          ),
+        ],
       ),
+
+      // GoRoute(
+      //   path: splash,
+      //   builder: (context, state) => const SplashPage(),
+      // ),
       GoRoute(
         path: login,
         builder: (context, state) => const LoginPage(),
@@ -31,14 +81,7 @@ class AppRouter {
         path: register,
         builder: (context, state) => const RegisterPage(),
       ),
-      GoRoute(
-        path: home,
-        builder: (context, state) => const HomePage(),
-      ),
-      GoRoute(
-        path: profile,
-        builder: (context, state) => const ProfilePage(),
-      ),
+
       GoRoute(
         path: projects,
         builder: (context, state) => const ProjectsPage(),
@@ -52,39 +95,19 @@ class AppRouter {
           ),
         ],
       ),
-      GoRoute(
-        path: tasks,
-        builder: (context, state) => const TasksPage(),
-        routes: [
-          GoRoute(
-            path: ':id',
-            builder: (context, state) {
-              final id = state.pathParameters['id']!;
-              return TaskDetailPage(taskId: id);
-            },
-          ),
-        ],
-      ),
-      GoRoute(
-        path: chat,
-        builder: (context, state) => const ChatPage(),
-        routes: [
-          GoRoute(
-            path: ':id',
-            builder: (context, state) {
-              final id = state.pathParameters['id']!;
-              return ChatRoomPage(chatId: id);
-            },
-          ),
-        ],
-      ),
-      GoRoute(
-        path: search,
-        builder: (context, state) => const SearchPage(),
-      ),
     ],
   );
 }
+
+
+
+
+
+
+
+
+
+
 
 // Placeholder pages - these will be replaced with actual implementations
 class SplashPage extends StatelessWidget {
@@ -114,14 +137,7 @@ class RegisterPage extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(body: Center(child: Text('Home Page')));
-  }
-}
+// HomePage is now imported from features/home/presentation/pages/home_page.dart
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -152,14 +168,7 @@ class ProjectDetailPage extends StatelessWidget {
   }
 }
 
-class TasksPage extends StatelessWidget {
-  const TasksPage({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(body: Center(child: Text('Tasks Page')));
-  }
-}
 
 class TaskDetailPage extends StatelessWidget {
   const TaskDetailPage({required this.taskId, super.key});

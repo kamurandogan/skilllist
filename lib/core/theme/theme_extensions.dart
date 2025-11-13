@@ -5,6 +5,20 @@ import '../constants/app_colors.dart';
 /// Custom theme extension for app-specific colors and properties
 /// not included in Material 3's ColorScheme
 class AppThemeExtension extends ThemeExtension<AppThemeExtension> {
+
+  const AppThemeExtension({
+    required this.successColor,
+    required this.warningColor,
+    required this.infoColor,
+    required this.successContainer,
+    required this.warningContainer,
+    required this.infoContainer,
+    required this.disabledColor,
+    required this.cardShadow,
+    this.primaryGradient,
+    this.secondaryGradient,
+    this.elevatedShadow,
+  });
   /// Success color for positive actions/states
   final Color successColor;
 
@@ -37,20 +51,6 @@ class AppThemeExtension extends ThemeExtension<AppThemeExtension> {
 
   /// Bottom shadow for elevated components
   final List<BoxShadow>? elevatedShadow;
-
-  const AppThemeExtension({
-    required this.successColor,
-    required this.warningColor,
-    required this.infoColor,
-    required this.successContainer,
-    required this.warningContainer,
-    required this.infoContainer,
-    required this.disabledColor,
-    required this.cardShadow,
-    this.primaryGradient,
-    this.secondaryGradient,
-    this.elevatedShadow,
-  });
 
   /// Light theme extension
   static AppThemeExtension get light => AppThemeExtension(

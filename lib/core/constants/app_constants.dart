@@ -2,8 +2,14 @@ class AppConstants {
   AppConstants._();
 
   // App Info
-  static const String appName = 'SkillList';
+  static const String appName = 'SkillLink';
   static const String appVersion = '1.0.0';
+
+  // Bottom Navigation Labels
+  static const String homeTab = 'Home';
+  static const String searchTab = 'Search';
+  static const String chatTab = 'Chat';
+  static const String profileTab = 'Profile';
 
   // API & Network
   static const int connectionTimeout = 30000;

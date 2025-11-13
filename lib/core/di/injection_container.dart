@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:get_it/get_it.dart';
 
-final sl = GetIt.instance;
+final GetIt sl = GetIt.instance;
 
 Future<void> init() async {
   // External dependencies
@@ -12,7 +12,7 @@ Future<void> init() async {
     ..registerLazySingleton(() => FirebaseFirestore.instance)
     ..registerLazySingleton(() => FirebaseStorage.instance);
 
-  // TODO: Register feature dependencies here
+  // TODO(kamuran): Register feature dependencies here
   // Example:
   // _initAuth();
   // _initProfile();

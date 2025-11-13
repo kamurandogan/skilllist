@@ -14,7 +14,7 @@ class AppColors {
   static const Color lightSecondary = Color(0xFF000000);
 
   /// Background color for screens
-  static const Color lightBackground = Color(0xFFf7f6f0);
+  static const Color lightBackground = Color(0xFFF6F7F7);
 
   /// Surface color for cards, sheets, menus
   static const Color lightSurface = Color(0xFFFFFFFF);
