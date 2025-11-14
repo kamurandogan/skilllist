@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
+import '../constants/app_colors.dart';
 import '../constants/app_dimensions.dart';
 import 'app_text_styles.dart';
 import 'color_schemes.dart';
 import 'theme_extensions.dart';
 
 /// Dark theme configuration for the app
-/// Uses Material 3 design with custom cream-based dark color scheme
+/// Uses Material 3 design with custom green/mint dark color scheme
 ThemeData get darkTheme => ThemeData(
       useMaterial3: true,
       colorScheme: darkColorScheme,
@@ -18,7 +19,7 @@ ThemeData get darkTheme => ThemeData(
         centerTitle: false,
         elevation: 0,
         scrolledUnderElevation: AppDimensions.elevation2,
-        backgroundColor: darkColorScheme.surface,
+        backgroundColor: AppColors.darkBackground,
         foregroundColor: darkColorScheme.onSurface,
         titleTextStyle: AppTextStyles.titleLarge.copyWith(
           color: darkColorScheme.onSurface,
@@ -351,7 +352,7 @@ ThemeData get darkTheme => ThemeData(
       ),
 
       // ==================== GENERAL SETTINGS ====================
-      scaffoldBackgroundColor: darkColorScheme.surface,
+      scaffoldBackgroundColor: AppColors.darkBackground,
       disabledColor: darkColorScheme.onSurface.withValues(
         alpha: AppDimensions.opacityDisabled,
       ),

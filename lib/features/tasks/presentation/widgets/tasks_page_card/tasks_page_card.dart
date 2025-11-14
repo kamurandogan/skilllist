@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import '../../../../../core/constants/app_dimensions.dart';
 import '../../../../../core/constants/app_paddings.dart';
 import '../../../../../core/widgets/app_circle_avatar.dart';
+import 'abilities_list.dart';
 import 'bookmark_button.dart';
+import 'task_price.dart';
 import 'task_title.dart';
 import 'user_name_title.dart';
 
@@ -31,8 +33,9 @@ class TaskCard extends StatelessWidget {
                 const BookmarkButton(),
               ],
             ),
-            const SizedBox(height: AppDimensions.spaceMd),
             TaskTitle(taskTitle: taskTitle),
+            const AbilitiesList(),
+            const TaskPrice(),
           ],
         ),
       ),

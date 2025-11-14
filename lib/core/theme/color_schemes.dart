@@ -3,35 +3,35 @@ import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 
 /// Material 3 ColorScheme definitions for light and dark themes
-/// Based on the app's cream/black color palette
+/// Based on the app's green/mint color palette
 
 /// Light theme color scheme
 const ColorScheme lightColorScheme = ColorScheme(
   brightness: Brightness.light,
 
-  // Primary colors
+  // Primary colors - Soft mint green
   primary: AppColors.lightPrimary,
   onPrimary: AppColors.lightOnPrimary,
-  primaryContainer: AppColors.lightSurfaceContainer,
-  onPrimaryContainer: AppColors.lightOnSurface,
+  primaryContainer: AppColors.lightTertiaryContainer,
+  onPrimaryContainer: AppColors.lightOnTertiary,
 
-  // Secondary colors
+  // Secondary colors - Vibrant green
   secondary: AppColors.lightSecondary,
   onSecondary: AppColors.lightOnSecondary,
-  secondaryContainer: AppColors.lightSurfaceDim,
-  onSecondaryContainer: AppColors.lightOnSurface,
+  secondaryContainer: AppColors.lightSuccessContainer,
+  onSecondaryContainer: AppColors.lightOnTertiary,
 
-  // Tertiary colors
+  // Tertiary colors - Very light mint
   tertiary: AppColors.lightTertiary,
-  onTertiary: AppColors.lightOnPrimary,
+  onTertiary: AppColors.lightOnTertiary,
   tertiaryContainer: AppColors.lightTertiaryContainer,
-  onTertiaryContainer: AppColors.lightOnSurface,
+  onTertiaryContainer: AppColors.lightOnTertiary,
 
   // Error colors
   error: AppColors.error,
   onError: Colors.white,
   errorContainer: AppColors.lightErrorContainer,
-  onErrorContainer: Color(0xFF8B0000),
+  onErrorContainer: Color(0xFF410002),
 
   // Surface colors
   surface: AppColors.lightSurface,
@@ -41,13 +41,13 @@ const ColorScheme lightColorScheme = ColorScheme(
   surfaceContainerLowest: Colors.white,
   surfaceContainerLow: AppColors.lightSurfaceBright,
   surfaceContainer: AppColors.lightSurfaceContainer,
-  surfaceContainerHigh: AppColors.lightSurfaceDim,
-  surfaceContainerHighest: AppColors.lightSurfaceDim,
-  onSurfaceVariant: Color(0xFF5A5A52),
+  surfaceContainerHigh: AppColors.lightSurfaceContainerHigh,
+  surfaceContainerHighest: AppColors.lightSurfaceContainerHighest,
+  onSurfaceVariant: AppColors.lightOnSurfaceVariant,
 
   // Outline colors
   outline: AppColors.lightOutline,
-  outlineVariant: Color(0xFFE0E0D8),
+  outlineVariant: AppColors.lightOutlineVariant,
 
   // Shadow and scrim
   shadow: AppColors.shadow,
@@ -63,29 +63,29 @@ const ColorScheme lightColorScheme = ColorScheme(
 const ColorScheme darkColorScheme = ColorScheme(
   brightness: Brightness.dark,
 
-  // Primary colors
+  // Primary colors - Darker mint
   primary: AppColors.darkPrimary,
   onPrimary: AppColors.darkOnPrimary,
-  primaryContainer: AppColors.darkSurfaceContainer,
-  onPrimaryContainer: AppColors.darkOnSurface,
+  primaryContainer: AppColors.darkTertiaryContainer,
+  onPrimaryContainer: AppColors.darkOnTertiary,
 
-  // Secondary colors
+  // Secondary colors - Brighter green
   secondary: AppColors.darkSecondary,
   onSecondary: AppColors.darkOnSecondary,
-  secondaryContainer: AppColors.darkSurfaceBright,
-  onSecondaryContainer: AppColors.darkOnSurface,
+  secondaryContainer: AppColors.darkSuccessContainer,
+  onSecondaryContainer: AppColors.darkOnTertiary,
 
-  // Tertiary colors
+  // Tertiary colors - Dark mint
   tertiary: AppColors.darkTertiary,
-  onTertiary: AppColors.darkOnPrimary,
+  onTertiary: AppColors.darkOnTertiary,
   tertiaryContainer: AppColors.darkTertiaryContainer,
-  onTertiaryContainer: AppColors.darkOnSurface,
+  onTertiaryContainer: AppColors.darkOnTertiary,
 
   // Error colors
   error: AppColors.error,
   onError: Colors.white,
   errorContainer: AppColors.darkErrorContainer,
-  onErrorContainer: Color(0xFFFFCDD2),
+  onErrorContainer: Color(0xFFFFDAD6),
 
   // Surface colors
   surface: AppColors.darkSurface,
@@ -95,13 +95,13 @@ const ColorScheme darkColorScheme = ColorScheme(
   surfaceContainerLowest: AppColors.darkBackground,
   surfaceContainerLow: AppColors.darkSurface,
   surfaceContainer: AppColors.darkSurfaceContainer,
-  surfaceContainerHigh: AppColors.darkSurfaceBright,
-  surfaceContainerHighest: Color(0xFF3E3E3C),
-  onSurfaceVariant: Color(0xFFB5B5A8),
+  surfaceContainerHigh: AppColors.darkSurfaceContainerHigh,
+  surfaceContainerHighest: AppColors.darkSurfaceContainerHighest,
+  onSurfaceVariant: AppColors.darkOnSurfaceVariant,
 
   // Outline colors
   outline: AppColors.darkOutline,
-  outlineVariant: Color(0xFF3A3A34),
+  outlineVariant: AppColors.darkOutlineVariant,
 
   // Shadow and scrim
   shadow: AppColors.shadow,

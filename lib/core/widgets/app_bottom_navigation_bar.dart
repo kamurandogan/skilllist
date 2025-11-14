@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import '../blocs/bottom_nav_cubit.dart';
-import '../constants/app_colors.dart';
 import '../constants/app_dimensions.dart';
 import '../routes/app_router.dart';
 
@@ -47,7 +46,6 @@ class _AppBottomNavState extends State<AppBottomNav> {
     return BlocBuilder<BottomNavCubit, int>(
       builder: (context, currentIndex) {
         return NavigationBar(
-          backgroundColor: AppColors.backgroundColor,
           height: AppDimensions.bottomNavHeight,
 
           selectedIndex: currentIndex,

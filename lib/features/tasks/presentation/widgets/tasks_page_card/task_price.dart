@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/constants/app_paddings.dart';
-import '../../../../../core/theme/app_theme.dart';
+import '../../../../../core/theme/app_text_styles.dart';
 
-class TaskTitle extends StatelessWidget {
-  const TaskTitle({required this.taskTitle, super.key});
-  final String taskTitle;
+class TaskPrice extends StatelessWidget {
+  const TaskPrice({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: AppPaddings.topMd,
       child: Text(
-        taskTitle,
-        style: AppTextStyles.titleMedium,
+        r'$ 1500',
+        style: AppTextStyles.headlineSmall.copyWith(fontWeight: FontWeight.bold),
       ),
     );
   }

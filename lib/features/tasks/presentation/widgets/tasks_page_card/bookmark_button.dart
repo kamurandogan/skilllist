@@ -5,6 +5,13 @@ class BookmarkButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(onPressed: () {}, icon: const Icon(Icons.bookmark_add_outlined));
+    final theme = Theme.of(context);
+    return IconButton(
+      onPressed: () {},
+      icon: Icon(
+        Icons.bookmark_add_outlined,
+        color: theme.colorScheme.secondary,
+      ),
+    );
   }
 }

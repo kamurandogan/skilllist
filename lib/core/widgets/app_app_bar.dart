@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../constants/app_dimensions.dart';
 import '../theme/app_text_styles.dart';
+import 'skilllink_icon.dart';
 
 /// Reusable AppBar widget for the application
 /// Implements PreferredSizeWidget to be used in Scaffold
@@ -43,11 +44,20 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
     final theme = Theme.of(context);
 
     return AppBar(
-      title: Text(
-        title,
-        style: AppTextStyles.titleLarge.copyWith(
-          color: foregroundColor ?? theme.colorScheme.onSurface,
-        ),
+      title: Row(
+        children: [
+          SkilllinkIcon(
+            width: AppDimensions.iconLarge,
+            height: AppDimensions.iconLarge,
+            color: foregroundColor ?? theme.colorScheme.onSurface,
+          ),
+          Text(
+            title,
+            style: AppTextStyles.titleLarge.copyWith(
+              color: foregroundColor ?? theme.colorScheme.onSurface,
+            ),
+          ),
+        ],
       ),
       centerTitle: centerTitle,
       elevation: elevation ?? 0,
@@ -59,6 +69,7 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
         color: foregroundColor ?? theme.colorScheme.onSurface,
         size: AppDimensions.iconMedium,
       ),
+      actionsPadding: const EdgeInsets.only(right: AppDimensions.spaceMd),
     );
   }
 
